@@ -7,6 +7,7 @@ ADD . /opt/app
 WORKDIR /opt/app
 
 RUN npm install serve -g
+RUN rm Dockerfile
 
 EXPOSE 3000
 
