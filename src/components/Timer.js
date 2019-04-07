@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import ReactNotifications from 'react-browser-notifications'
 
-const StyledTimer = styled.div`
-  text-align: center;
-  font-size: 10rem;
-`
-
 class Timer extends Component {
   constructor (props) {
     super(props)
@@ -81,5 +76,11 @@ class Timer extends Component {
     )
   }
 }
+
+const StyledTimer = styled.div`
+  text-align: center;
+  font-size: 10rem;
+  color: #ddd;
+`
 
 export default Timer
