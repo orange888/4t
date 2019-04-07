@@ -14,23 +14,27 @@ class Timer extends Component {
   }
 
   showNotifications () {
-    if (this.n.supported()) this.n.show()
+    if (this.props.notificationsEnabled) {
+      if (this.n.supported()) this.n.show()
+    }
   }
 
   handleClick (event) {
     this.n.close(event.target.tag)
   }
 
-  componentWillMount() {
+  componentWillMount () {
     const context = new AudioContext()
-    function beep () {
-      let o = context.createOscillator()
-      let g = context.createGain()
-      o.start(0)
-      o.frequency.value = 830.6
-      o.connect(g)
-      g.connect(context.destination)
-      g.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.1)
+    const beep = () => {
+      if (this.props.soundEnabled) {
+        let o = context.createOscillator()
+        let g = context.createGain()
+        o.start(0)
+        o.frequency.value = 830.6
+        o.connect(g)
+        g.connect(context.destination)
+        g.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.1)
+      }
     }
     if (!this.state.running) {
       setTimeout(() => {
