@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Body from './components/Body'
 import Header from './components/Header'
 import Timer from './components/Timer'
+import Control from './components/Control'
 import Footer from './components/Footer'
 
 class App extends Component {
@@ -15,6 +16,16 @@ class App extends Component {
         <Body title={props.title}>
           <Header title={props.title} subtitle={props.subtitle} />
           <Timer time='1200' />
+          <Control
+            name='soundEnabled'
+            labelOn='Sound On'
+            labelOff='Sound Off'
+          />
+          <Control
+            name='notificationsEnabled'
+            labelOn='Notifications On'
+            labelOff='Notifications Off'
+          />
           <Footer />
         </Body>
       </div>
