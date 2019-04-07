@@ -6,6 +6,7 @@ class Control extends Component {
     let name = event.target.name
     let isChecked = event.target.checked
     console.log(name + ' ' + isChecked)
+    console.log(event)
   }
 
   render () {
@@ -33,6 +34,7 @@ class Control extends Component {
 const StyledControl = styled.div`
   width: 60px;
   text-align: center;
+  padding: 1rem;
   *,
   *:before,
   *:after {

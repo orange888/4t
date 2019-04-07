@@ -16,16 +16,18 @@ class App extends Component {
         <Body title={props.title}>
           <Header title={props.title} subtitle={props.subtitle} />
           <Timer time='1200' />
-          <Control
-            name='soundEnabled'
-            labelOn='Sound On'
-            labelOff='Sound Off'
-          />
-          <Control
-            name='notificationsEnabled'
-            labelOn='Notifications On'
-            labelOff='Notifications Off'
-          />
+          <div>
+            <Control
+              name='soundEnabled'
+              labelOn='Sound On'
+              labelOff='Sound Off'
+            />
+            <Control
+              name='notificationsEnabled'
+              labelOn='Notifications On'
+              labelOff='Notifications Off'
+            />
+          </div>
           <Footer />
         </Body>
       </div>
