@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const StyledFooter = styled.div`
-  text-align: center;
-  font-size: 1.6rem;
-  max-width: 800px;
-  padding: 1rem;
-`
-
 class Footer extends Component {
   render () {
     return (
@@ -21,5 +14,13 @@ class Footer extends Component {
     )
   }
 }
+
+const StyledFooter = styled.div`
+  text-align: center;
+  font-size: 1.6rem;
+  max-width: 800px;
+  padding: 1rem;
+  color: #ddd;
+`
 
 export default Footer

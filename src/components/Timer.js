@@ -81,6 +81,7 @@ const StyledTimer = styled.div`
   text-align: center;
   font-size: 10rem;
   padding-bottom: 3rem;
+  color: #ddd;
 `
 
 export default Timer
