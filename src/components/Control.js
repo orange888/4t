@@ -2,14 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 class Control extends Component {
-  handleChange (event) {
-    let name = event.target.name
-    let isChecked = event.target.checked
-    console.log(name + ' ' + isChecked)
-    console.log(event)
-  }
 
-  render () {
+  render (props) {
     return (
       <StyledControl>
         <input
@@ -17,8 +11,8 @@ class Control extends Component {
           name={this.props.name}
           id={this.props.name}
           className='ios-toggle'
-          onChange={this.handleChange}
-          defaultChecked
+          onChange={event => this.props.changeSettings(event)}
+          checked={ this.props.isEnabled ? 'checked' : '' }
         />
         <label
           htmlFor={this.props.name}
