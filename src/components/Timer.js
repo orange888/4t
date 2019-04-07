@@ -13,15 +13,7 @@ class Timer extends Component {
     }
   }
 
-  showNotifications () {
-    if (this.n.supported()) this.n.show()
-  }
-
-  handleClick (event) {
-    this.n.close(event.target.tag)
-  }
-
-  startTimer () {
+  componentWillMount() {
     const context = new AudioContext()
     function beep () {
       let o = context.createOscillator()
@@ -50,6 +42,14 @@ class Timer extends Component {
     }
   }
 
+  showNotifications () {
+    if (this.n.supported()) this.n.show()
+  }
+
+  handleClick (event) {
+    this.n.close(event.target.tag)
+  }
+
   format (time) {
     let seconds = time % 60
     let minutes = Math.floor(time / 60)
@@ -60,7 +60,7 @@ class Timer extends Component {
 
   render () {
     const { count } = this.state
-    this.startTimer()
+    // this.startTimer()
     return (
       <StyledTimer>
         {this.format(count)}
@@ -68,7 +68,7 @@ class Timer extends Component {
           onRef={ref => (this.n = ref)}
           title='Rest Your Eyes!'
           body='Focus on something 20 feet away for 20 seconds.'
-          icon='../../public/favicon.ico'
+          icon='/favicon.ico'
           tag='restYourEyes'
           onClick={event => this.handleClick(event)}
         />
