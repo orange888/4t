@@ -21,7 +21,7 @@ class Timer extends Component {
     this.n.close(event.target.tag)
   }
 
-  startTimer () {
+  componentWillMount() {
     const context = new AudioContext()
     function beep () {
       let o = context.createOscillator()
@@ -60,7 +60,6 @@ class Timer extends Component {
 
   render () {
     const { count } = this.state
-    this.startTimer()
     return (
       <StyledTimer>
         {this.format(count)}
