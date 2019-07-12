@@ -1,7 +1,7 @@
 {
   "name": "4t",
   "description": "A simple 20-20-20 timer for eye health.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "author": "DL Ford",
   "homepage": "https://dlford.github.io/4t",
